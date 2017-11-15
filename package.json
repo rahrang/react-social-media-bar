@@ -1,0 +1,40 @@
+{
+  "name": "react-social-media-bar",
+  "version": "0.0.1",
+  "description": "A React component creating external links to social media profiles using Font Awesome icons",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "dependencies": {
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahrang/react-social-media-bar.git"
+  },
+  "author": {
+    "name": "Rahul Rangnekar",
+    "email": "rrangnekar96@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "aphrodite": "^1.2.5",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "polished": "^1.9.0",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2",
+    "react-dom": "^16.1.1",
+    "styled-components": "^2.2.3"
+  }
+}
