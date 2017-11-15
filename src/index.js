@@ -1,44 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import * as _ from 'lodash';
 
 export default class SocialMediaBar extends React.Component {
   render() {
-    console.log(this.props);
-
     let {
       icons,
       bgColor,
       iconColor,
-      brandColors,
+      iconOpacity,
       iconSize,
-      vertical,
-      hoverOpacity,
       hoverColor,
-      sameTab
+      hoverOpacity,
+      margin,
+      padding,
+      sameTab,
+      vertical
     } = this.props;
 
     let generatedIcons = icons.map((icon, index) => {
-      let {
-        link,
-        iconColor,
-        iconOpacity,
-        iconSize,
-        hoverOpacity,
-        hoverColor,
-        sameTab,
-        margin,
-        padding
-      } = icon;
       return (
         <IconAnchor
           key={`${icon.media}_${index}`}
           href={icon.link}
           target={icon.sameTab ? '_self' : '_blank'}
           iconColor={icon.iconColor || iconColor}
-          iconOpacity={icon.iconOpacity || iconOpacity}
+          iconOpacity={setOpacity(icon.iconOpacity, iconOpacity)}
           iconSize={icon.iconSize || iconSize}
-          hoverOpacity={icon.hoverOpacity || hoverOpacity}
+          hoverOpacity={setOpacity(icon.hoverOpacity, hoverOpacity)}
           hoverColor={icon.hoverColor || hoverColor}
           margin={icon.margin || margin}
           padding={icon.padding || padding}
@@ -49,22 +39,19 @@ export default class SocialMediaBar extends React.Component {
     });
 
     return (
-      <div>
-        <h1>This is so SocialMsdfsaediaBar!</h1>
-        <ContainerDiv bgColor={bgColor} vertical={vertical}>
-          {generatedIcons}
-        </ContainerDiv>
-      </div>
+      <ContainerDiv bgColor={bgColor} vertical={vertical}>
+        {generatedIcons}
+      </ContainerDiv>
     );
   }
 }
 
 const ContainerDiv = styled.div`
+  background-color: ${({ bgColor }) => bgColor};
   display: flex;
   flex-direction: ${({ vertical }) => vertical && 'column'};
   align-items: center;
   justify-content: center;
-  background-color: ${({ bgColor }) => bgColor};
 `;
 
 ContainerDiv.propTypes = {
@@ -73,12 +60,12 @@ ContainerDiv.propTypes = {
   iconColor: PropTypes.string,
   iconOpacity: PropTypes.number,
   iconSize: PropTypes.string,
-  vertical: PropTypes.bool,
-  sameTab: PropTypes.bool,
   hoverOpacity: PropTypes.number,
   hoverColor: PropTypes.string,
   margin: PropTypes.objectOf(PropTypes.string),
-  padding: PropTypes.objectOf(PropTypes.string)
+  padding: PropTypes.objectOf(PropTypes.string),
+  sameTab: PropTypes.bool,
+  vertical: PropTypes.bool
 };
 
 ContainerDiv.defaultProps = {
@@ -87,10 +74,8 @@ ContainerDiv.defaultProps = {
   iconColor: '#FFF',
   iconOpacity: 1,
   iconSize: '1em',
-  vertical: false,
-  sameTab: false,
+  hoverColor: '',
   hoverOpacity: 1,
-  hoverColor: '#FFF',
   margin: {
     top: '5px',
     right: '5px',
@@ -102,7 +87,9 @@ ContainerDiv.defaultProps = {
     right: '0',
     bottom: '0',
     left: '0'
-  }
+  },
+  sameTab: false,
+  vertical: false
 };
 
 const IconAnchor = styled.a`
@@ -119,7 +106,8 @@ const IconAnchor = styled.a`
   padding-right: ${({ padding }) => padding.right};
   padding-bottom: ${({ padding }) => padding.bottom};
   &:hover {
-    color: ${({ hoverColor }) => hoverColor};
+    color: ${({ hoverColor, iconColor }) =>
+      !_.isUndefined ? hoverColor : iconColor};
     opacity: ${({ hoverOpacity }) => hoverOpacity};
   }
 `;
@@ -130,21 +118,21 @@ IconAnchor.propTypes = {
   iconColor: PropTypes.string,
   iconOpacity: PropTypes.number,
   iconSize: PropTypes.string,
-  hoverOpacity: PropTypes.number,
   hoverColor: PropTypes.string,
-  sameTab: PropTypes.bool,
+  hoverOpacity: PropTypes.number,
   margin: PropTypes.objectOf(PropTypes.string),
-  padding: PropTypes.objectOf(PropTypes.string)
+  padding: PropTypes.objectOf(PropTypes.string),
+  sameTab: PropTypes.bool
 };
 
 IconAnchor.defaultProps = {
-  link: '/',
+  href: '/',
+  target: '_blank',
   iconColor: '#FFF',
   iconOpacity: 1,
   iconSize: '1em',
-  hoverOpacity: 1,
   hoverColor: '#FFF',
-  sameTab: false,
+  hoverOpacity: 1,
   margin: {
     top: '5px',
     right: '5px',
@@ -156,5 +144,10 @@ IconAnchor.defaultProps = {
     right: '0',
     bottom: '0',
     left: '0'
-  }
+  },
+  sameTab: false
+};
+
+const setOpacity = (opacity, parentOpacity) => {
+  return !_.isUndefined(opacity) ? opacity : parentOpacity;
 };

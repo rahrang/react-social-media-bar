@@ -21,6 +21,8 @@ class App extends React.Component {
           iconSize={'40px'}
           icons={ICONS}
           padding={{ top: '6px', left: '3px', right: '12px', bottom: '9px' }}
+          iconOpacity={0}
+          hoverOpacity={1}
         />
       </div>
     );
@@ -31,13 +33,13 @@ const ICONS = [
   {
     media: 'quora',
     link: 'https://quora.com',
-    iconColor: '#289079'
+    iconColor: '#289079',
+    iconSize: '20px'
   },
   {
     media: 'facebook',
     link: 'https://facebook.com',
     iconColor: 'green',
-    hoverColor: 'red',
     iconOpacity: 0.5,
     hoverOpacity: 1,
     sameTab: true
@@ -48,6 +50,12 @@ const ICONS = [
     hoverColor: 'black',
     iconOpacity: 0.5,
     hoverOpacity: 1,
+    margin: {
+      top: '12px',
+      right: '14px',
+      left: '100px',
+      bottom: '1px'
+    },
     padding: {
       top: '12px',
       right: '14px',
