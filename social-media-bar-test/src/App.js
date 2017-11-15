@@ -15,7 +15,13 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        This is our SocialMediaBar component: <SocialMediaBar />
+        This is our SocialMediaBar component:
+        <SocialMediaBar
+          vertical
+          bgColor="#FFD700"
+          iconColor="#895FAD"
+          iconSize={'40px'}
+        />
       </div>
     );
   }
