@@ -24,7 +24,7 @@ export default class SocialMediaBar extends React.Component {
         <IconAnchor
           key={`${icon.media}_${index}`}
           href={icon.link}
-          target={icon.sameTab ? '_self' : '_blank'}
+          target={setTarget(icon.sameTab, sameTab)}
           iconColor={icon.iconColor || iconColor}
           iconOpacity={setOpacity(icon.iconOpacity, iconOpacity)}
           iconSize={icon.iconSize || iconSize}
@@ -60,8 +60,8 @@ ContainerDiv.propTypes = {
   iconColor: PropTypes.string,
   iconOpacity: PropTypes.number,
   iconSize: PropTypes.string,
-  hoverOpacity: PropTypes.number,
   hoverColor: PropTypes.string,
+  hoverOpacity: PropTypes.number,
   margin: PropTypes.objectOf(PropTypes.string),
   padding: PropTypes.objectOf(PropTypes.string),
   sameTab: PropTypes.bool,
@@ -71,7 +71,7 @@ ContainerDiv.propTypes = {
 ContainerDiv.defaultProps = {
   icons: [],
   bgColor: 'rgba(0, 0, 0, 0)',
-  iconColor: '#FFF',
+  iconColor: '#000',
   iconOpacity: 1,
   iconSize: '1em',
   hoverColor: '',
@@ -128,10 +128,10 @@ IconAnchor.propTypes = {
 IconAnchor.defaultProps = {
   href: '/',
   target: '_blank',
-  iconColor: '#FFF',
+  iconColor: '#000',
   iconOpacity: 1,
   iconSize: '1em',
-  hoverColor: '#FFF',
+  hoverColor: '#000',
   hoverOpacity: 1,
   margin: {
     top: '5px',
@@ -150,4 +150,12 @@ IconAnchor.defaultProps = {
 
 const setOpacity = (opacity, parentOpacity) => {
   return !_.isUndefined(opacity) ? opacity : parentOpacity;
+};
+
+const setTarget = (sameTab, parentSameTab) => {
+  if (!_.isUndefined(sameTab)) {
+    return sameTab ? '_self' : '_blank';
+  } else {
+    return parentSameTab ? '_self' : '_blank';
+  }
 };
