@@ -34,7 +34,15 @@ import SocialMediaBar from 'react-social-media-bar';
 [See here](http://fontawesome.io/get-started/) for directions.
 
 ## Examples
-- [not yet implemented]
+Live demo: [to be implemented]
+To build the examples locally, clone this repo. Then run:
+```bash
+npm install
+cd examples
+npm install
+npm start
+```
+Then open `localhost:3000` in a browser window.
 
 ## Props
 Properties are passed into the `SocialMediaBar` as follows. These are the default values for each property. Note that not all properties are required.
