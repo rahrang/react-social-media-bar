@@ -53,26 +53,63 @@ class App extends React.Component {
             );
           })}
         </div>
+
+        {/* Example 1 */}
         <div className={css(styles.container)}>
-          <h3 className={css(styles.h3)}>
-            This is a minimally-styled SocialMediaBar -- all properties other
-            than "icons" are at the default values.
-          </h3>
+          <div className={css(styles.hContainer)}>
+            <h3 className={css(styles.h3)}>
+              This is a minimally-styled SocialMediaBar -- all properties other
+              than "icons" are at the default values.
+            </h3>
+            <a
+              className={css(styles.lineLink)}
+              href="https://github.com/rahrang/react-social-media-bar/blob/2e3d12693e48a92beab71814fb3d53e289fff998/examples/src/App.js#L62"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Example Source
+            </a>
+          </div>
           {/* Look for the declaration of MININAL_ICONS near the top of this file. */}
           <SocialMediaBar icons={MINIMAL_ICONS} />
         </div>
+
+        {/* Example 2 */}
         <div className={css(styles.container)}>
-          <h3 className={css(styles.h3)}>
-            This is the same minimally-styled SocialMediaBar, but vertical with
-            the links opening in this tab.
-          </h3>
+          <div className={css(styles.hContainer)}>
+            <h3 className={css(styles.h3)}>
+              This is the same minimally-styled SocialMediaBar, but vertical
+              with the links opening in this tab.
+            </h3>
+            <a
+              className={css(styles.lineLink)}
+              href="https://github.com/rahrang/react-social-media-bar/blob/2e3d12693e48a92beab71814fb3d53e289fff998/examples/src/App.js#L69"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Example Source
+            </a>
+          </div>
           <SocialMediaBar icons={MINIMAL_ICONS} vertical sameTab />
         </div>
+
+        {/* Example 3 */}
         <div className={css(styles.container)}>
-          <h3 className={css(styles.h3)}>
-            This is a SocialMediaBar, with the styles passed into the component
-            as properties, not as key-value pairs in the "icons" property.
-          </h3>
+          <div className={css(styles.hContainer)}>
+            <h3 className={css(styles.h3)}>
+              This is a SocialMediaBar, with the styles passed into the
+              component as properties, not as key-value pairs in the "icons"
+              property.
+            </h3>
+            <a
+              className={css(styles.lineLink)}
+              href="https://github.com/rahrang/react-social-media-bar/blob/2e3d12693e48a92beab71814fb3d53e289fff998/examples/src/App.js#L76"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Example Source
+            </a>
+          </div>
           <SocialMediaBar
             bgColor={'#289089'}
             icons={MINIMAL_ICONS}
@@ -115,12 +152,17 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    margin: '15px'
+    margin: '15px 0'
+  },
+
+  hContainer: {
+    margin: '10px 0'
   },
 
   h3: {
     fontSize: '1em',
-    fontWeight: '300'
+    fontWeight: '300',
+    margin: '2.5px 0'
   },
 
   linkContainer: {
@@ -141,6 +183,17 @@ const styles = StyleSheet.create({
     ':hover': {
       color: '#FFF',
       backgroundColor: '#289089'
+    }
+  },
+
+  lineLink: {
+    color: '#289089',
+    fontSize: '0.875em',
+    letterSpacing: '0.025em',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    ':hover': {
+      opacity: '0.5'
     }
   }
 });
