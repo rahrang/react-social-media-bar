@@ -20,7 +20,7 @@
 # npm install react-social-media-bar --save
 
 # Yarn
-# [not yet implemented]
+# yarn add react-social-media-bar
 ```
 
 2. Import the `react-social-media-bar` module
@@ -29,13 +29,29 @@
 import SocialMediaBar from 'react-social-media-bar';
 ```
 
-3. Import Font Awesome into your project
-I recommend using the CDN. [See here](http://fontawesome.io/get-started/) for directions.
+3. Import Font Awesome into your project. I recommend using the CDN.
+[See here](http://fontawesome.io/get-started/) for directions.
 
 ## Examples
 - [not yet implemented]
 
 ## Props
+Properties are passed into the `SocialMediaBar` as follows. These are the default values for each property. Note that not all properties are required.
+```javascript
+<SocialMediaBar
+  icons={[]}
+  bgColor="rgba(0, 0, 0, 0)"
+  iconColor="#FFF"
+  iconOpacity={1}
+  iconSize="1em"
+  hoverColor="#FFF"
+  margin={{top: '5px', right: '5px', bottom: '5px', left: '5px'}}
+  padding={{top: '0px', right: '0px', bottom: '0px', left: '0px'}}
+  sameTab={false}
+  vertical={false}
+/>
+```
+
 | Property | Type | Required | Default | Description
 |:---|:---|:---|:---|:---|
 | `icons` | Array<Object> | yes | [] | The icons that will be rendered. See below for format. |
@@ -53,7 +69,7 @@ I recommend using the CDN. [See here](http://fontawesome.io/get-started/) for di
 ### Icons Prop
 The `icons` property is an Array of Objects in which each Object represents an icon to be included in this component.
 Each icon Object has the following key-value pairs. Note that if a key is not specified in this Object, the key inherits the value given to its corresponding `property` from the table above. If the `property` was not defined, the key is given the default value listed in the table above.
-For more clarification, please see the [Examples](#examples)
+For more clarification, please see the [Examples](#examples).
 
 | Key | Value Type | Required | Description |
 |:---|:---|:---|:---|
