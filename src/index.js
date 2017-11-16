@@ -24,7 +24,7 @@ export default class SocialMediaBar extends React.Component {
         <IconAnchor
           key={`${icon.media}_${index}`}
           href={icon.link}
-          target={icon.sameTab ? '_self' : '_blank'}
+          target={setTarget(icon.sameTab, sameTab)}
           iconColor={icon.iconColor || iconColor}
           iconOpacity={setOpacity(icon.iconOpacity, iconOpacity)}
           iconSize={icon.iconSize || iconSize}
@@ -150,4 +150,12 @@ IconAnchor.defaultProps = {
 
 const setOpacity = (opacity, parentOpacity) => {
   return !_.isUndefined(opacity) ? opacity : parentOpacity;
+};
+
+const setTarget = (sameTab, parentSameTab) => {
+  if (!_.isUndefined(sameTab)) {
+    return sameTab ? '_self' : '_blank';
+  } else {
+    return parentSameTab ? '_self' : '_blank';
+  }
 };

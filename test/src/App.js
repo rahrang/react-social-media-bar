@@ -6,7 +6,7 @@ import SocialMediaBar from 'react-social-media-bar';
 class App extends React.Component {
   render() {
     return (
-      <div className={css(styles.container)}>
+      <div className={css(styles.pageContainer)}>
         <h1 className={css(styles.header)}>React Social Media Bar</h1>
         <a
           className={css(styles.link)}
@@ -15,11 +15,21 @@ class App extends React.Component {
         >
           GitHub Page
         </a>
-        <h3>This is a mininally-styled SocialMediaBar</h3>
-        <SocialMediaBar icons={MINIMAL_ICONS} />
+        <div className={css(styles.container)}>
+          <h3 className={css(styles.h3)}>
+            This is a minimally-styled SocialMediaBar
+          </h3>
+          <SocialMediaBar icons={MINIMAL_ICONS} />
+        </div>
+        <div className={css(styles.container)}>
+          <h3 className={css(styles.h3)}>
+            This is the same minimally-styled SocialMediaBar, but vertical with
+            the links opening in this tab.
+          </h3>
+          <SocialMediaBar icons={MINIMAL_ICONS} vertical sameTab />
+        </div>
         This is our SocialMediaBar component:
         <SocialMediaBar
-          // vertical
           bgColor="#FFD700"
           iconColor="#895FAD"
           iconSize={'40px'}
@@ -85,7 +95,7 @@ const ICONS = [
 ];
 
 const styles = StyleSheet.create({
-  container: {
+  pageContainer: {
     fontFamily: 'Roboto, sans-serif',
     display: 'flex',
     flexDirection: 'column',
@@ -96,6 +106,15 @@ const styles = StyleSheet.create({
   header: {
     fontSize: '1.5em',
     fontColor: '#333'
+  },
+
+  container: {
+    margin: '15px'
+  },
+
+  h3: {
+    fontSize: '1em',
+    fontWeight: '300'
   },
 
   link: {
