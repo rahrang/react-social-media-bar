@@ -12,6 +12,7 @@
 - [Installation](#installation)
 - [Examples](#examples)
 - [Props](#props)
+- [Credits](#credits)
 
 ## Installation
 1. Install React Social Media Bar as a dependency
@@ -84,3 +85,7 @@ For more clarification, please see the [Examples](#examples).
 | `margin` | Object | no | The margin on this icon. |
 | `padding` | Object | no | The padding on this icon. |
 | `sameTab` | Boolean | no | If `true`, clicking on this icon will open its `link` URL in the same tab. If `false` the `link` URL will open in a new tab. |
+
+## Credits
+- Dave Gandy, the awesome creator of [Font Awesome](http://fontawesome.io/)
+- [Alan Smith](https://hackernoon.com/building-a-react-component-library-part-2-46fd4f77bb5c) and [Noel Broda](https://medium.com/@BrodaNoel/how-to-create-a-react-component-and-publish-it-in-npm-668ad7d363ce), who wrote articles on Medium to guide me through creating and publishing this React Component
