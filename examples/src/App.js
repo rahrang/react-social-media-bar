@@ -3,45 +3,21 @@ import { css, StyleSheet } from 'aphrodite';
 
 import SocialMediaBar from 'react-social-media-bar';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className={css(styles.pageContainer)}>
-        <h1 className={css(styles.header)}>React Social Media Bar</h1>
-        <a
-          className={css(styles.link)}
-          href="https://github.com/rahrang/react-social-media-bar/"
-          target="_blank"
-        >
-          GitHub Page
-        </a>
-        <div className={css(styles.container)}>
-          <h3 className={css(styles.h3)}>
-            This is a minimally-styled SocialMediaBar
-          </h3>
-          <SocialMediaBar icons={MINIMAL_ICONS} />
-        </div>
-        <div className={css(styles.container)}>
-          <h3 className={css(styles.h3)}>
-            This is the same minimally-styled SocialMediaBar, but vertical with
-            the links opening in this tab.
-          </h3>
-          <SocialMediaBar icons={MINIMAL_ICONS} vertical sameTab />
-        </div>
-        This is our SocialMediaBar component:
-        <SocialMediaBar
-          bgColor="#FFD700"
-          iconColor="#895FAD"
-          iconSize={'40px'}
-          icons={ICONS}
-          padding={{ top: '6px', left: '3px', right: '12px', bottom: '9px' }}
-          iconOpacity={0}
-          hoverOpacity={1}
-        />
-      </div>
-    );
+const EXTERNAL_LINKS = [
+  {
+    text: 'GitHub Repository',
+    link: 'https://github.com/rahrang/react-social-media-bar/'
+  },
+  {
+    text: 'Source Code',
+    link:
+      'https://github.com/rahrang/react-social-media-bar/blob/master/examples/src/App.js'
+  },
+  {
+    text: 'NPM Page',
+    link: 'https://www.npmjs.com/package/react-social-media-bar'
   }
-}
+];
 
 const MINIMAL_ICONS = [
   {
@@ -58,41 +34,71 @@ const MINIMAL_ICONS = [
   }
 ];
 
-const ICONS = [
-  {
-    media: 'quora',
-    link: 'https://quora.com',
-    iconColor: '#289079',
-    iconSize: '20px'
-  },
-  {
-    media: 'facebook',
-    link: 'https://facebook.com',
-    iconColor: 'green',
-    iconOpacity: 0.5,
-    hoverOpacity: 1,
-    sameTab: true
-  },
-  {
-    media: 'twitter',
-    link: 'https://twitter.com',
-    hoverColor: 'black',
-    iconOpacity: 0.5,
-    hoverOpacity: 1,
-    margin: {
-      top: '12px',
-      right: '14px',
-      left: '100px',
-      bottom: '1px'
-    },
-    padding: {
-      top: '12px',
-      right: '14px',
-      left: '100px',
-      bottom: '1px'
-    }
+class App extends React.Component {
+  render() {
+    return (
+      <div className={css(styles.pageContainer)}>
+        <h1 className={css(styles.header)}>React Social Media Bar</h1>
+        <div className={css(styles.linkContainer)}>
+          {EXTERNAL_LINKS.map(l => {
+            return (
+              <a
+                className={css(styles.link)}
+                href={l.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {l.text}
+              </a>
+            );
+          })}
+        </div>
+        <div className={css(styles.container)}>
+          <h3 className={css(styles.h3)}>
+            This is a minimally-styled SocialMediaBar -- all properties other
+            than "icons" are at the default values.
+          </h3>
+          {/* Look for the declaration of MININAL_ICONS near the top of this file. */}
+          <SocialMediaBar icons={MINIMAL_ICONS} />
+        </div>
+        <div className={css(styles.container)}>
+          <h3 className={css(styles.h3)}>
+            This is the same minimally-styled SocialMediaBar, but vertical with
+            the links opening in this tab.
+          </h3>
+          <SocialMediaBar icons={MINIMAL_ICONS} vertical sameTab />
+        </div>
+        <div className={css(styles.container)}>
+          <h3 className={css(styles.h3)}>
+            This is a SocialMediaBar, with the styles passed into the component
+            as properties, not as key-value pairs in the "icons" property.
+          </h3>
+          <SocialMediaBar
+            bgColor={'#289089'}
+            icons={MINIMAL_ICONS}
+            iconColor={'#FFD700'}
+            iconOpacity={0.75}
+            iconSize={'1.5em'}
+            hoverColor={'#895FAD'}
+            hoverOpacity={0.9}
+            margin={{
+              top: '10px',
+              left: '10px',
+              right: '10px',
+              bottom: '12px'
+            }}
+            padding={{
+              top: '3px',
+              left: '2px',
+              right: '2px',
+              bottom: '3px'
+            }}
+          />
+        </div>
+      </div>
+    );
   }
-];
+}
 
 const styles = StyleSheet.create({
   pageContainer: {
@@ -117,8 +123,25 @@ const styles = StyleSheet.create({
     fontWeight: '300'
   },
 
+  linkContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
   link: {
-    textDecoration: 'none'
+    border: '1px solid #289089',
+    borderRadius: '3px',
+    color: '#289089',
+    margin: '10px',
+    padding: '5px 10px',
+    textDecoration: 'none',
+    ':hover': {
+      color: '#FFF',
+      backgroundColor: '#289089'
+    }
   }
 });
 

@@ -25,6 +25,7 @@ export default class SocialMediaBar extends React.Component {
           key={`${icon.media}_${index}`}
           href={icon.link}
           target={setTarget(icon.sameTab, sameTab)}
+          rel={'noopener noreferrer'}
           iconColor={icon.iconColor || iconColor}
           iconOpacity={setOpacity(icon.iconOpacity, iconOpacity)}
           iconSize={icon.iconSize || iconSize}
@@ -107,7 +108,7 @@ const IconAnchor = styled.a`
   padding-bottom: ${({ padding }) => padding.bottom};
   &:hover {
     color: ${({ hoverColor, iconColor }) =>
-      !_.isUndefined ? hoverColor : iconColor};
+      !_.isUndefined(hoverColor) ? hoverColor : iconColor};
     opacity: ${({ hoverOpacity }) => hoverOpacity};
   }
 `;
