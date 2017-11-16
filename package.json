@@ -1,7 +1,8 @@
 {
   "name": "react-social-media-bar",
-  "version": "0.0.3",
-  "description": "A React component creating external links to social media profiles using Font Awesome icons",
+  "version": "0.0.4",
+  "description":
+    "A React component creating external links to social media profiles using Font Awesome icons",
   "main": "build/index.js",
   "dependencies": {},
   "scripts": {
