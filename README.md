@@ -56,7 +56,7 @@ Each icon Object has the following key-value pairs. Note that if a key is not sp
 For more clarification, please see the [Examples](#examples)
 
 | Key | Value Type | Required | Description |
-|:---|:---|:---|:---|:---|
+|:---|:---|:---|:---|
 | `media` | String | yes | The name of the social media (i.e. 'facebook', 'twitter', ...) |
 | `link` | String | yes | The URL to which this icon will link |
 | `iconColor` | String | no | The color of this icon when hovered over. |
