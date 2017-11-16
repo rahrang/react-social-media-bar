@@ -1,15 +1,9 @@
 {
   "name": "react-social-media-bar",
   "version": "0.0.2",
-  "description":
-    "A React component creating external links to social media profiles using Font Awesome icons",
+  "description": "A React component creating external links to social media profiles using Font Awesome icons",
   "main": "build/index.js",
-  "peerDependencies": {
-    "react": "^15.5.4"
-  },
-  "dependencies": {
-    "webpack": "^2.6.1"
-  },
+  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
@@ -34,8 +28,9 @@
     "lodash": "^4.17.4",
     "polished": "^1.9.0",
     "prop-types": "^15.6.0",
-    "react": "^15.6.2",
+    "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "styled-components": "^2.2.3"
+    "styled-components": "^2.2.3",
+    "webpack": "^3.8.1"
   }
 }
