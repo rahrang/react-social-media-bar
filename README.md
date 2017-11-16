@@ -55,7 +55,7 @@ The `icons` property is an Array of Objects in which each Object represents an i
 Each icon Object has the following key-value pairs. Note that if a key is not specified in this Object, the key inherits the value given to its corresponding `property` from the table above. If the `property` was not defined, the key is given the default value listed in the table above.
 For more clarification, please see the [Examples](#examples)
 
-| Key | Value Type | Required | Description
+| Key | Value Type | Required | Description |
 |:---|:---|:---|:---|:---|
 | `media` | String | yes | The name of the social media (i.e. 'facebook', 'twitter', ...) |
 | `link` | String | yes | The URL to which this icon will link |
