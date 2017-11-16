@@ -71,7 +71,7 @@ ContainerDiv.propTypes = {
 ContainerDiv.defaultProps = {
   icons: [],
   bgColor: 'rgba(0, 0, 0, 0)',
-  iconColor: '#FFF',
+  iconColor: '#000',
   iconOpacity: 1,
   iconSize: '1em',
   hoverColor: '',
@@ -128,10 +128,10 @@ IconAnchor.propTypes = {
 IconAnchor.defaultProps = {
   href: '/',
   target: '_blank',
-  iconColor: '#FFF',
+  iconColor: '#000',
   iconOpacity: 1,
   iconSize: '1em',
-  hoverColor: '#FFF',
+  hoverColor: '#000',
   hoverOpacity: 1,
   margin: {
     top: '5px',

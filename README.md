@@ -42,10 +42,10 @@ Properties are passed into the `SocialMediaBar` as follows. These are the defaul
 <SocialMediaBar
   icons={[]}
   bgColor="rgba(0, 0, 0, 0)"
-  iconColor="#FFF"
+  iconColor="#000"
   iconOpacity={1}
   iconSize="1em"
-  hoverColor="#FFF"
+  hoverColor="#000"
   hoverOpacity={1}
   margin={{top: '5px', right: '5px', bottom: '5px', left: '5px'}}
   padding={{top: '0px', right: '0px', bottom: '0px', left: '0px'}}
@@ -58,10 +58,10 @@ Properties are passed into the `SocialMediaBar` as follows. These are the defaul
 |:---|:---|:---|:---|:---|
 | `icons` | Array<Object> | yes | [] | The icons that will be rendered. See below for format. |
 | `bgColor` | String | no | rgba(0, 0, 0, 0) | The background color of the component. |
-| `iconColor` | String | no | #FFF | The color of each icon in the `icons` array when hovered over. |
+| `iconColor` | String | no | #000 | The color of each icon in the `icons` array when hovered over. |
 | `iconOpacity` | Integer | no | 1 | The opacity of each icon in the `icons` array when hovered over. |
 | `iconSize` | String | no | 1em | The size of each icon in the `icons` array. |
-| `hoverColor` | String | no | #FFF | The color of an icon in the `icons` array when hovered over. |
+| `hoverColor` | String | no | #000 | The color of an icon in the `icons` array when hovered over. |
 | `hoverOpacity` | Integer | no | 1 | The opacity of an icon in the `icons` array when hovered over. |
 | `margin` | Object | no | {top: '5px', right: '5px', bottom: '5px', left: '5px'} | The margin on each icon in the `icons` array. |
 | `padding` | Object | no | {top: '0px', right: '0px', bottom: '0px', left: '0px'} | The padding on each icon in the `icons` array. |

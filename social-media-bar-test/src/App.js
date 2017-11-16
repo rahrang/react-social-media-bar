@@ -1,18 +1,22 @@
 import React from 'react';
-import './App.css';
+import { css, StyleSheet } from 'aphrodite';
 
 import SocialMediaBar from 'react-social-media-bar';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className={css(styles.container)}>
+        <h1 className={css(styles.header)}>React Social Media Bar</h1>
+        <a
+          className={css(styles.link)}
+          href="https://github.com/rahrang/react-social-media-bar/"
+          target="_blank"
+        >
+          GitHub Page
+        </a>
+        <h3>This is a mininally-styled SocialMediaBar</h3>
+        <SocialMediaBar icons={MINIMAL_ICONS} />
         This is our SocialMediaBar component:
         <SocialMediaBar
           // vertical
@@ -28,6 +32,21 @@ class App extends React.Component {
     );
   }
 }
+
+const MINIMAL_ICONS = [
+  {
+    media: 'instagram',
+    link: 'https://instagram.com/rahrang'
+  },
+  {
+    media: 'github',
+    link: 'https://github.com/rahrang'
+  },
+  {
+    media: 'linkedin',
+    link: 'https://linkedin.com/in/rahrang'
+  }
+];
 
 const ICONS = [
   {
@@ -64,5 +83,24 @@ const ICONS = [
     }
   }
 ];
+
+const styles = StyleSheet.create({
+  container: {
+    fontFamily: 'Roboto, sans-serif',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  header: {
+    fontSize: '1.5em',
+    fontColor: '#333'
+  },
+
+  link: {
+    textDecoration: 'none'
+  }
+});
 
 export default App;
