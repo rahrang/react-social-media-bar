@@ -15,7 +15,7 @@
 - [Credits](#credits)
 
 ## Installation
-1. Install React Social Media Bar as a dependency
+1. Install React Social Media Bar as a dependency.
 ```bash
 # NPM
 npm install react-social-media-bar --save
@@ -24,7 +24,7 @@ npm install react-social-media-bar --save
 yarn add react-social-media-bar
 ```
 
-2. Import the `react-social-media-bar` module
+2. Import the `react-social-media-bar` module.
 ```javascript
 // ES6
 import SocialMediaBar from 'react-social-media-bar';
@@ -34,8 +34,13 @@ import SocialMediaBar from 'react-social-media-bar';
 [See here](http://fontawesome.io/get-started/) for directions.
 
 ## Examples
+Link to examples code: [Click here.](https://github.com/rahrang/react-social-media-bar/blob/master/examples/src/App.js)
+
 Live demo: [to be implemented]
-To build the examples locally, clone this repo. Then run:
+
+To build the examples locally, clone this repo. 
+
+Then run:
 ```bash
 npm install
 cd examples
