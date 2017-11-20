@@ -90,8 +90,8 @@ For more clarification, please see the [Examples](#examples).
 |:---|:---|:---|:---|
 | `media` | String | yes | The [Font Awesome icon name](http://fontawesome.io/icons/#brand) of the social media (i.e. 'github', 'facebook-official', 'youtube', ...) |
 | `link` | String | yes | The URL to which this icon will link |
-| `iconColor` | String | no | The color of this icon when hovered over. |
-| `iconOpacity` | Integer | no | The opacity of this icon when hovered over. |
+| `iconColor` | String | no | The color of this icon. |
+| `iconOpacity` | Integer | no | The opacity of this icon. |
 | `iconSize` | String | no | The size of this icon. |
 | `hoverColor` | String | no | The color of this icon when hovered over. |
 | `hoverOpacity` | Integer | no | The opacity of this icon when hovered over. |
